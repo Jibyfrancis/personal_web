@@ -24,33 +24,4 @@
   $('body').scrollspy({
     target: '#sideNav'
   });
-
-  $(document).ready(function(){
-    $("#submit-form").validate({
-        rules:{
-          fname:{
-            required:true,
-            minlength:4,
-            maxlength:8
-    
-          },
-            emailAddress:{
-              required:true,
-              email:true
-
-            },
-            phoneno: {
-              matches: "[0-9]+", 
-              minlength:10,
-              maxlength:10
-            },
-
-            
-    
-        },
-        
-    })
-    })
-
-
 })(jQuery); // End of use strict

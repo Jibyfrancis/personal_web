@@ -1,40 +1,54 @@
-function validate(){
-    var name = document.getElementById("name").value;
-    var place = document.getElementById("place").value;
-    var phone = document.getElementById("phone").value;
-    var email = document.getElementById("email").value;
-    var message = document.getElementById("message").value;
-    var error_message = document.getElementById("error_message");
-    
-    error_message.style.padding = "10px";
-    
-    var text;
-    if(name.length < 5 ){
-      text = "Please Enter valid Name";
-      error_message.innerHTML = text;
-      return false;
 
-    }
-    if(place.length < 10){
-      text = "Please Enter Correct Place";
-      error_message.innerHTML = text;
-      return false;
-    }
-    if(isNaN(phone) || phone.length != 10){
-      text = "Please Enter valid Phone Number";
-      error_message.innerHTML = text;
-      return false;
-    }
-    if(email.indexOf("@&& ") == -1 || email.length < 6){
-      text = "Please Enter valid Email";
-      error_message.innerHTML = text;
-      return false;
-    }
-    if(message.length <= 10){
-      text = "Please Enter More Than 10 Characters";
-      error_message.innerHTML = text;
-      return false;
-    }
-    alert("Form Submitted Successfully!");
-    return true;
-  }
+function handleCheckout(){
+  let checkCondition = true;
+  
+
+    
+
+    //email validation
+let email = document.querySelector("#email").value;
+if (email == "") {
+document.querySelector("#errors").innerHTML = "Email field is empty";
+checkCondition = false;
+}
+let reEmail=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+if (!reEmail.test(email)) {
+  document.querySelector("#errors").innerHTML ="Invalid Email!";
+    
+  checkCondition = false;
+}
+
+//validate phone number
+let phone = document.querySelector("#phone").value;
+let rePhone= /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/;
+//let rePhone = /^\+{0,2}([\-\. ])?(\(?\d{0,3}\))?([\-\. ])?\(?\d{0,3}\)?([\-\. ])?\d{3}([\-\. ])?\d{4}/;
+if (!rePhone.test(phone)) {
+  document.querySelector("#errors").innerHTML =
+    "Phone number format should be like XXXXXXXXX!!";
+  checkCondition = false;
+}
+
+// for place
+let lplace=document.querySelector("#lplace").value;
+if (lplace == "") {
+ document.querySelector("#errors").innerHTML = "Place field is empty";
+ checkCondition = false;
+ }
+
+  // name validation
+let reFname =  /[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/;
+let lname = document.querySelector("#lname").value;
+if (!reFname.test(lname)) {
+  document.querySelector("#errors").innerHTML =
+    "Name should be letters!!";
+  checkCondition = false;
+}
+
+
+if(checkCondition == true){
+  document.querySelector("#errors").innerHTML = "Success!";
+  // let receiptContainer = document.getElementById("receiptForm");
+  // receiptContainer.className = "show";
+}
+  
+}

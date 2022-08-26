@@ -362,16 +362,16 @@
             
             <div class="row">
             <div class="input_field col-md-6">
-                <input type="text" placeholder="Name" id="lname" name="lname">
+                <input required type="text" placeholder="Name" id="lname" name="lname">
             </div>
             <div class="input_field col-md-6">
-                <input type="text" placeholder="Place" id="lplace" name="lplace">
+                <input required type="text" placeholder="Place" id="lplace" name="lplace">
             </div>
             <div class="input_field col-md-6">
-                <input type="text" placeholder="Phone" id="phone" name="phone">
+                <input required type="text" placeholder="Phone" id="phone" name="phone">
             </div>
             <div class="input_field col-md-6">
-                <input type="text" placeholder="Email" id="email" name="email">
+                <input required type="text" placeholder="Email" id="email" name="email">
             </div>
             <div class="input_field col-md-6">
                 <textarea placeholder="Message" id="message" style=" height: 200px;"></textarea>
@@ -394,26 +394,24 @@
     </div>
 
     <script>
-
-
-    $("#submit-form").submit((e)=>{
-      e.preventDefault()
-      $.ajax({
-           url:" https://script.google.com/macros/s/AKfycbw8qcQyvj5B3m5wLQ3dLKXIPsuXoZLd4rzHLJY26OlxOWBw6hB0BXq93uwE9hRhMfiP/exec ",
-          data:$("#submit-form").serialize(),
-          method:"post",
-          success:function (response){
-              alert("Form submitted successfully")
-              window.location.reload()
-              //window.location.href="https://google.com"
-          },
-          error:function (err){
-              alert("Something Error")
-
-          }
+      $("#submit-form").submit((e)=>{
+          e.preventDefault()
+          $.ajax({
+              url:"https://script.google.com/macros/s/AKfycbweCI4mgQgQdtGTGfH29fjM_yx2il8y8IttQNSTvmigArHxiDIFzKXQn6nM20H-NZvY/exec",
+              data:$("#submit-form").serialize(),
+              method:"post",
+              success:function (response){
+                  alert("Form submitted successfully")
+                  window.location.reload()
+                  //window.location.href="https://google.com"
+              },
+              error:function (err){
+                  alert("Something Error")
+  
+              }
+          })
       })
-  })
-</script>
+  </script>
 
     <script src="js/script.js"></script>
 

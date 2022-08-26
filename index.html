@@ -341,7 +341,7 @@
               <div class="card-body">
                 <h5 class="card-title">Zerodha</h5>
                 <p class="card-text">Clone of Zerodha <br> want to see click the button</p>
-                <a href="https://jibyfrancis.github.io/zeroda/" class="btn btn-primary">Click me</a>
+                <a href="https://jibyfrancis.github.io/zeroda/" target="_blank" class="btn btn-primary">Click me</a>
               </div>
             </div>
 
@@ -358,7 +358,7 @@
           <div id="error_message">
              
           </div>
-          <form  action="" id="submit-form"  autocomplete="off" onclick= " handleCheckout();">
+          <form  action="" id="submit-form"  autocomplete="on" onclick= " handleCheckout();">
             
             <div class="row">
             <div class="input_field col-md-6">
@@ -378,7 +378,7 @@
             </div> 
             
             <div class="btn">
-                <input type="submit" id="bt" value="submit"  >
+              <button disabled id="submit" type="submit" value="submit" > submit</button>
                
                </div>
             <p id="errors" style="color: brown"></p>
@@ -393,31 +393,27 @@
 
     </div>
 
-
     <script>
-           
 
-      $("#submit-form").submit((e)=>{
-          // let data=document.getElementById('lname').value
-          // alert(name)
-          // console.log(name)
-          e.preventDefault()
-          $.ajax({
-              url:" https://script.google.com/macros/s/AKfycbw8qcQyvj5B3m5wLQ3dLKXIPsuXoZLd4rzHLJY26OlxOWBw6hB0BXq93uwE9hRhMfiP/exec ",
-              data:$("formData").serialize(),
-              method:"post",
-              success:function (response){
-                  alert("Form submitted successfully")
-                  window.location.reload()
-                  //window.location.href="https://google.com"
-              },
-              error:function (err){
-                  alert("Something Error")
-  
-              }
-          })
+
+    $("#submit-form").submit((e)=>{
+      e.preventDefault()
+      $.ajax({
+           url:" https://script.google.com/macros/s/AKfycbw8qcQyvj5B3m5wLQ3dLKXIPsuXoZLd4rzHLJY26OlxOWBw6hB0BXq93uwE9hRhMfiP/exec ",
+          data:$("#submit-form").serialize(),
+          method:"post",
+          success:function (response){
+              alert("Form submitted successfully")
+              window.location.reload()
+              //window.location.href="https://google.com"
+          },
+          error:function (err){
+              alert("Something Error")
+
+          }
       })
-  </script>
+  })
+</script>
 
     <script src="js/script.js"></script>
 

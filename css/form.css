@@ -30,22 +30,22 @@
     height: 80px;
   }
   
-  .wrapper .btn input[type="submit"]{
+  .wrapper .btn button{
     border: 0px;
     margin-top: 15px;
     padding: 10px;
     text-align: center;
     width: 100%;
-    background: #bd5d38;
-    color: #ffffff;
+    /* background: rgb(188, 94, 56); */
+    /* color: #18ce1e; */
     text-transform: uppercase;
     letter-spacing: 5px;
     font-weight: bold;
     border-radius: 25px;
     cursor: pointer;
   }
-  #bt:hover{
-    background-color: #9f9ea5;
+  #submit:hover{
+    background-color:rgb(188, 94, 56);
   }
   
   #error_message{

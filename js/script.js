@@ -47,8 +47,13 @@ if (!reFname.test(lname)) {
 
 if(checkCondition == true){
   document.querySelector("#errors").innerHTML = "Success!";
-  // let receiptContainer = document.getElementById("receiptForm");
-  // receiptContainer.className = "show";
+  const subButton = document.getElementById("submit")
+   subButton.disabled=false;
+   document.getElementById("submit"). style. color= "lime";
+    
+
 }
+
   
 }
+
